@@ -91,6 +91,7 @@ jobs:
     
     - name: rewrite index.html
       run: |
+        ls -l
         rm index.html
         cat ../index.html > index.html
         cat index.html
