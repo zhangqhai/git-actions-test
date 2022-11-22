@@ -84,6 +84,7 @@ jobs:
       
     - name: set git info
       run: |
+        cd zhangqhai.github.io
         sudo git config user.name "zhangqhai" 
         sudo git config user.email  "zqh1017@foxmail.com"
         sudo git config --global github.user zhangqhai
