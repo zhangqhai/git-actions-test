@@ -112,6 +112,6 @@ jobs:
     - name: push
       run: |
         cd zhangqhai.github.io
-        git push https://github.com/zhangqhai/zhangqhai.github.io.git
+        git push https://zhangqhai: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@github.com/zhangqhai/zhangqhai.github.io.git
       env: 
         GITHUB_TOKEN: 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
