@@ -1,0 +1,96 @@
+
+name: git-action-test-ci-demo1
+on: push
+
+jobs:
+  run-script:
+    name: job-02
+    runs-on: ubuntu-latest
+    # needs: ['run-test']
+    steps:
+    
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' 
+    - run: python -V
+    
+    - name: Print env
+      env:
+        MY_VAR: Hi! My name is
+        FIRST_NAME: ZHANG SAN
+      run: |
+        echo $MY_VAR $FIRST_NAME.
+      
+    - name: install go and print go version
+      uses: actions/setup-go@v3
+      with: 
+        go-version: '1.18.0-rc.1'
+    - run: go version
+    
+    - name: install JDK
+      uses: actions/setup-java@v3
+      with: 
+        distribution: 'temurin'
+        java-version: '11'
+        
+    - name: Print java version and maven version
+      run: java -version & mvn -v
+      
+    - name: checkout
+      uses: actions/checkout@v3
+      
+    - name: run java app
+      run: pwd & java Demo.java
+    
+    - name: build go app
+      run: CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o println.exe println.go
+  
+    - name: Show file
+      run: ls -l
+      
+    - name: Upload artifact
+      uses: actions/upload-artifact@main
+      with:
+        name: github-pages
+        path: ./println.exe
+  
+  
+  run-test:
+    name: job-01
+    runs-on: windows-latest
+    steps:
+    
+    - name: Print date
+      run: date & git --version
+    
+    - name: Print network info
+      run: ipconfig
+      
+  update-pages:
+    name: job-03
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: checkout
+      uses: actions/checkout@v3
+    
+    - name: clone code
+      run: git clone https://${{ secrets.PAGES_ADDR }}
+      
+    - name: rewrite index.html
+      run: rm zhangqhai.github.io/index.html & cat index.html > zhangqhai.github.io/index.html
+      
+    - name: change dir
+      run: cd zhangqhai.github.io
+      
+    - name: set git info
+      run: sudo git config user.name "zhangqhai" & sudo git config user.email  ${{ secrets.MY_EMAIL }}
+      
+    - name: git add
+      run: git status & git add ./
+      
+    - name: git commit
+      run: git commit -m 'update index.html' ./
+      
+    - name: push
+      run: git push https://zhangqhai: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@github.com/zhangqhai/zhangqhai.github.io.git main
