@@ -90,7 +90,7 @@ jobs:
         git add ./
         git commit -m 'update index.html' ./
         date
-        git push
+        git push https://zqh1017%40foxmail.com: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@github.com/zhangqhai/note.git main
       env: 
         GITHUB_TOKEN: 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
         
