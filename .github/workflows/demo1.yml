@@ -77,8 +77,8 @@ jobs:
     - name: clone code
       run: git clone https://github.com/zhangqhai/zhangqhai.github.io.git
       
-    - name: rewrite index.html
-      run: rm zhangqhai.github.io/index.html & cat index.html > zhangqhai.github.io/index.html
+    #- name: rewrite index.html
+    #  run: rm zhangqhai.github.io/index.html & cat index.html > zhangqhai.github.io/index.html
       
     - name: change dir
       run: |
