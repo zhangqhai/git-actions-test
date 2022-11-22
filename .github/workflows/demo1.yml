@@ -94,6 +94,7 @@ jobs:
         git remote remove origin
         git remote add origin https://github.com/zhangqhai/zhangqhai.github.io.git
         git remote set-url origin https://$GITHUB_TOKEN@github.com/zhangqhai/zhangqhai.github.io.git
+        git config http.sslVerify "false"
         date
         git push -u origin:main
       env: 
