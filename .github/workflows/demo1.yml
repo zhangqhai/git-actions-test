@@ -91,12 +91,15 @@ jobs:
     
     - name: rewrite index.html
       run: |
-        rm zhangqhai.github.io/index.html
-        cat index.html > zhangqhai.github.io/index.html
-        cat zhangqhai.github.io/index.html
+        rm index.html
+        cat ../index.html > index.html
+        cat index.html
     
     - name: git add
-      run: git status & git add ./
+      run: |
+        git status 
+        git add ./
+        ls -l
       
     - name: git commit
       run: git commit -m 'update index.html' ./
