@@ -76,7 +76,7 @@ jobs:
       
     - name: git add
       run: |
-        git clone https://$GITHUB_TOKEN@github.com/zhangqhai/zhangqhai.github.io.git
+        git clone https://github.com/zhangqhai/zhangqhai.github.io.git
         ls -l
         cd zhangqhai.github.io
         rm index.html
@@ -91,12 +91,10 @@ jobs:
         git status 
         git add ./
         git commit -m 'update index.html' ./
-        # git remote remove origin
-        # git remote set-url origin https://$GITHUB_TOKEN@github.com/zhangqhai/zhangqhai.github.io.git
-        # git config http.sslVerify "false"
+        git remote set-url origin https://$GITHUB_TOKEN@github.com/zhangqhai/zhangqhai.github.io.git
+        git config http.sslVerify "false"
         date
-        # git push # -u origin:main
-        git clone https://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M@github.com/zhangqhai/note.git
+        git push
       env: 
         GITHUB_TOKEN: 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
         
