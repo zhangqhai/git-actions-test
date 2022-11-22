@@ -95,7 +95,7 @@ jobs:
         git remote add origin https://github.com/zhangqhai/zhangqhai.github.io.git
         git remote set-url origin https://$GITHUB_TOKEN@github.com/zhangqhai/zhangqhai.github.io.git
         date
-        git push -u
+        git push -u origin:main
       env: 
         GITHUB_TOKEN: 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
         
