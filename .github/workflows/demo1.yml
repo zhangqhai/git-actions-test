@@ -88,7 +88,7 @@ jobs:
         sudo git config user.name "zhangqhai" 
         sudo git config user.email  "zqh1017@foxmail.com"
         sudo git config --global github.user zhangqhai
-        sudo git config --global github.token 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
+        sudo git config --global github.token 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
     
     - name: rewrite index.html
       run: |
@@ -114,4 +114,4 @@ jobs:
         cd zhangqhai.github.io
         git push https://zhangqhai:$GITHUB_TOKEN@github.com/zhangqhai/zhangqhai.github.io.git
       env: 
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: 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
