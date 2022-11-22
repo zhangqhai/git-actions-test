@@ -73,25 +73,15 @@ jobs:
     
     - name: checkout
       uses: actions/checkout@v3
-    
-    - name: clone code
-      run: git clone https://github.com/zhangqhai/zhangqhai.github.io.git
       
-    - name: change dir
+    - name: git add
       run: |
-        cd zhangqhai.github.io
+        git clone https://github.com/zhangqhai/zhangqhai.github.io.git
         ls -l
-      
-    - name: rewrite index.html
-      run: |
         cd zhangqhai.github.io
         rm index.html
         cat ../index.html > index.html
         cat index.html
-    
-    - name: git add
-      run: |
-        cd zhangqhai.github.io
         ls -l
         git --version
         sudo git config user.name "zhangqhai" 
