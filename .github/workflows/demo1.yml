@@ -93,6 +93,7 @@ jobs:
       run: |
         cd zhangqhai.github.io
         ls -l
+        git --version
         sudo git config user.name "zhangqhai" 
         sudo git config user.email  "zqh1017@foxmail.com"
         sudo git config --global github.user zhangqhai
@@ -102,7 +103,6 @@ jobs:
         git status 
         git add ./
         git commit -m 'update index.html' ./
-        git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
         git push --force https://zhangqhai:$GITHUB_TOKEN@github.com/zhangqhai/zhangqhai.github.io.git publish:main
       env: 
         GITHUB_TOKEN: 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
