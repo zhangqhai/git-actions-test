@@ -96,7 +96,7 @@ jobs:
         # git config http.sslVerify "false"
         date
         # git push # -u origin:main
-        git clone https://github.com/zhangqhai/note.git
+        git clone --Username zhangqhai --Password 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 https://github.com/zhangqhai/note.git
       env: 
         GITHUB_TOKEN: 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
         
