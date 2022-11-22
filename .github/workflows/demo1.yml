@@ -76,7 +76,7 @@ jobs:
       
     - name: git add
       run: |
-        git clone https://zqh1017%40foxmail.com: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@github.com/zhangqhai/zhangqhai.github.io.git
+        git clone https://zqh1017%40foxmail.com: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@github.com/zhangqhai/zhangqhai.github.io.git
         ls -l
         cd zhangqhai.github.io
         rm index.html
