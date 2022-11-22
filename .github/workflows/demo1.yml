@@ -113,6 +113,6 @@ jobs:
     - name: push
       run: |
         cd zhangqhai.github.io
-        git push
+        git push https://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@github.com/zhangqhai/zhangqhai.github.io.git main
       env: 
         GITHUB_TOKEN: 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
