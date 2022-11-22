@@ -91,21 +91,26 @@ jobs:
     
     - name: rewrite index.html
       run: |
-        ls -l
+        cd zhangqhai.github.io
         rm index.html
         cat ../index.html > index.html
         cat index.html
     
     - name: git add
       run: |
+        cd zhangqhai.github.io
         git status 
         git add ./
         ls -l
       
     - name: git commit
-      run: git commit -m 'update index.html' ./
+      run: | 
+        cd zhangqhai.github.io
+        git commit -m 'update index.html' ./
       
     - name: push
-      run: git push https://github.com/zhangqhai/zhangqhai.github.io.git
+      run: |
+        cd zhangqhai.github.io
+        git push https://github.com/zhangqhai/zhangqhai.github.io.git
       env: 
         GITHUB_TOKEN: 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
