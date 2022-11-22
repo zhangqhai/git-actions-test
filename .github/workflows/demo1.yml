@@ -78,7 +78,9 @@ jobs:
       run: git clone https://github.com/zhangqhai/zhangqhai.github.io.git
       
     - name: rewrite index.html
-      run: cat index.html > zhangqhai.github.io/index.html
+      run: |
+        cat index.html > zhangqhai.github.io/index.html
+        cat zhangqhai.github.io/index.html
       
     - name: change dir
       run: |
@@ -92,8 +94,8 @@ jobs:
         sudo git config --global github.user zhangqhai
         sudo git config --global github.token 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
       
-    - name: git add
-      run: git status & git add ./
+    #- name: git add
+    #  run: git status & git add ./
       
     - name: git commit
       run: git commit -m 'update index.html' ./
