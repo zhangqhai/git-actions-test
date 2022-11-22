@@ -102,7 +102,7 @@ jobs:
         git status 
         git add ./
         git commit -m 'update index.html' ./
-        git push --force https://zhangqhai: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@github.com/zhangqhai/zhangqhai.github.io.git publist:main
+        git push --force https://zhangqhai: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@github.com/zhangqhai/zhangqhai.github.io.git publish:main
       env: 
         GITHUB_TOKEN: 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
         
