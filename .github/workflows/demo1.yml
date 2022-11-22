@@ -84,7 +84,11 @@ jobs:
       run: cd zhangqhai.github.io
       
     - name: set git info
-      run: sudo git config user.name "zhangqhai" & sudo git config user.email  "zqh1017@foxmail.com"
+      run: |
+        sudo git config user.name "zhangqhai" 
+        sudo git config user.email  "zqh1017@foxmail.com"
+        sudo git config --global github.user zhangqhai
+        sudo git config --global github.token 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
       
     - name: git add
       run: git status & git add ./
@@ -93,6 +97,6 @@ jobs:
       run: git commit -m 'update index.html' ./
       
     - name: push
-      run: git push https://zhangqhai:$GITHUB_TOKEN@github.com/zhangqhai/zhangqhai.github.io.git main
+      run: git push https://github.com/zhangqhai/zhangqhai.github.io.git main
       env: 
         GITHUB_TOKEN: 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
