@@ -90,7 +90,7 @@ jobs:
         git add ./
         git commit -m 'update index.html' ./
         date
-        git push https://zqh1017%40foxmail.com:${{ secrets.T1 }}@github.com/zhangqhai/note.git main
+        git push https://zqh1017%40foxmail.com:${{ secrets.T1 }}@github.com/zhangqhai/zhangqhai.github.io.git main
       env: 
         GITHUB_TOKEN: ${{ secrets.T1 }}
         
