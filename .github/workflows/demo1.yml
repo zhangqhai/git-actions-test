@@ -81,7 +81,9 @@ jobs:
       run: rm zhangqhai.github.io/index.html & cat index.html > zhangqhai.github.io/index.html
       
     - name: change dir
-      run: cd zhangqhai.github.io
+      run: |
+        cd zhangqhai.github.io
+        ls -l
       
     - name: set git info
       run: |
@@ -97,6 +99,6 @@ jobs:
       run: git commit -m 'update index.html' ./
       
     - name: push
-      run: git push https://github.com/zhangqhai/zhangqhai.github.io.git main
+      run: git push https://github.com/zhangqhai/zhangqhai.github.io.git
       env: 
         GITHUB_TOKEN: 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
