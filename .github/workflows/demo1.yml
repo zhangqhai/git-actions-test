@@ -4,7 +4,7 @@ on: push
 
 jobs:
   job-id-01:
-    name: job-02
+    name: job-01
     runs-on: ubuntu-latest
     needs: ['job-id-03']
     steps:
@@ -47,7 +47,7 @@ jobs:
   
   
   job-id-02:
-    name: job-01
+    name: job-02
     runs-on: windows-latest
     needs: ['job-id-03']
     steps:
