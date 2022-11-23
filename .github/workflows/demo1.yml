@@ -64,7 +64,7 @@ jobs:
   job-id-04:
     name: job-04
     runs-on: windows-latest
-    needs: ['job-id-03','job-id-01']
+    needs: ['job-id-03','job-id-02']
     steps:
     - name: Print disk info
       run: df -hl
