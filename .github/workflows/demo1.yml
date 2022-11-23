@@ -32,17 +32,28 @@ jobs:
       uses: actions/checkout@v3
       
     - name: Run java app
-      run: pwd & java Demo.java
+      run: |
+        pwd & java Demo.java
+        cd cloud-service
+        mvn clean package
+        ls -l
+        
+    - name: Upload java artifact
+      uses: actions/upload-artifact@main
+      with:
+        name: clocloud-service-app
+        path: ./cloud-service/target/cloud-service-1.0.0-SNAPSHOT.jar
+    - run: pwd
     
     - name: Build go app
       run: |
         CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o println.exe println.go
         ls -l
       
-    - name: Upload artifact
+    - name: Upload go artifact
       uses: actions/upload-artifact@main
       with:
-        name: println.ext
+        name: println-app
         path: ./println.exe
   
   
