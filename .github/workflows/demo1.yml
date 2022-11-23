@@ -1,5 +1,5 @@
 
-name: git-action-test-ci-demo1
+name: git-action-test-woekflow-1
 on: push
 
 jobs:
