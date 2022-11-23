@@ -15,7 +15,7 @@ jobs:
         FIRST_NAME: ZHANG SAN
       run: echo $MY_VAR $FIRST_NAME.
       
-    - name: install go and print go version
+    - name: Install go and print go version
       uses: actions/setup-go@v3
       with: 
         go-version: '1.18.0-rc.1'
@@ -28,13 +28,13 @@ jobs:
         java-version: '11'
     - run: java -version & mvn -v
       
-    - name: checkout
+    - name: Checkout
       uses: actions/checkout@v3
       
-    - name: run java app
+    - name: Run java app
       run: pwd & java Demo.java
     
-    - name: build go app
+    - name: Build go app
       run: |
         CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o println.exe println.go
         ls -l
