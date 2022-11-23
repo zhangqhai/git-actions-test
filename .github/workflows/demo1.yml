@@ -60,4 +60,11 @@ jobs:
     steps:
     - name: Print date
       run: date
-        
+      
+  job-id-04:
+    name: job-04
+    runs-on: windows-latest
+    needs: ['job-id-03','job-id-01']
+    steps:
+    - name: Print disk info
+      run: df -hl
