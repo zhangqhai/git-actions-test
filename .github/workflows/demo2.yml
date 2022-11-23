@@ -25,6 +25,5 @@ jobs:
             git status 
             git add ./
             git commit -m 'update index.html' ./
-            date
             git push https://${{ secrets.USERNAME_MAIL }}:${{ secrets.T1 }}@${{ secrets.PAGES_ADDR_NO_PROTOCOL }} main
     
