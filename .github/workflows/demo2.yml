@@ -1,6 +1,8 @@
 
 name: git-action-test-ci-demo2
-on: push
+on: 
+    push:
+        paths: 'index.html'
 
 jobs:
     update-pages:
