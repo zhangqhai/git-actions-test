@@ -3,23 +3,17 @@ name: git-action-test-ci-demo1
 on: push
 
 jobs:
-  run-script:
+  job-id-01:
     name: job-02
     runs-on: ubuntu-latest
-    # needs: ['run-test']
+    needs: ['job-id-03']
     steps:
-    
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.10' 
-    - run: python -V
     
     - name: Print env
       env:
         MY_VAR: Hi! My name is
         FIRST_NAME: ZHANG SAN
-      run: |
-        echo $MY_VAR $FIRST_NAME.
+      run: echo $MY_VAR $FIRST_NAME.
       
     - name: install go and print go version
       uses: actions/setup-go@v3
@@ -34,7 +28,9 @@ jobs:
         java-version: '11'
         
     - name: Print java version and maven version
-      run: java -version & mvn -v
+      run: |
+        java -version 
+        mvn -v
       
     - name: checkout
       uses: actions/checkout@v3
@@ -43,10 +39,9 @@ jobs:
       run: pwd & java Demo.java
     
     - name: build go app
-      run: CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o println.exe println.go
-  
-    - name: Show file
-      run: ls -l
+      run: |
+        CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o println.exe println.go
+        ls -l
       
     - name: Upload artifact
       uses: actions/upload-artifact@main
@@ -55,42 +50,18 @@ jobs:
         path: ./println.exe
   
   
-  run-test:
+  job-id-02:
     name: job-01
     runs-on: windows-latest
+    needs: ['job-id-03']
     steps:
-    
-    - name: Print date
-      run: date & git --version
-    
     - name: Print network info
       run: ipconfig
       
-  update-pages:
+  job-id-03:
     name: job-03
     runs-on: ubuntu-latest
     steps:
-    
-    - name: checkout
-      uses: actions/checkout@v3
-      
-    - name: git add
-      run: |
-        git clone https://zqh1017%40foxmail.com:${{ secrets.T1 }}@github.com/zhangqhai/zhangqhai.github.io.git
-        ls -l
-        cd zhangqhai.github.io
-        rm index.html
-        cat ../index.html > index.html
-        cat index.html
-        ls -l
-        git --version
-        sudo git config user.name "zhangqhai" 
-        sudo git config user.email  "zqh1017@foxmail.com"
-        git status 
-        git add ./
-        git commit -m 'update index.html' ./
-        date
-        git push https://zqh1017%40foxmail.com:${{ secrets.T1 }}@github.com/zhangqhai/zhangqhai.github.io.git main
-      env: 
-        GITHUB_TOKEN: ${{ secrets.T1 }}
+    - name: Print date
+      run: date
         
