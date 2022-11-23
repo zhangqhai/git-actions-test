@@ -1,5 +1,5 @@
 
-name: git-action-test-ci-demo2
+name: git-action-test-woekflow-2
 on: 
     push:
         paths: 'index.html'
