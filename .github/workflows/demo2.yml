@@ -21,7 +21,7 @@ jobs:
             ls -l
             git --version
             sudo git config user.name "zhangqhai" 
-            sudo git config user.email  "zqh1017@foxmail.com"
+            sudo git config user.email  "${{ secrets.MAIL }}"
             git status 
             git add ./
             git commit -m 'update index.html' ./
