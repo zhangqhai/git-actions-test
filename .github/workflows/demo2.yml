@@ -16,17 +16,13 @@ jobs:
         - name: push update
           run: |
             git clone https://${{ secrets.USERNAME_MAIL }}:${{ secrets.T1 }}@${{ secrets.PAGES_ADDR_NO_PROTOCOL }}
-            ls -l
             cd zhangqhai.github.io
-            ls -l
             rm index.html
             cat ../index.html > index.html
-            cat index.html
-            ls -l
             git --version
-            sudo git config user.name "zhangqhai" 
+            sudo git config user.name "zhangqhai"
             sudo git config user.email  "${{ secrets.MAIL }}"
-            git status 
+            git status
             git add ./
             git commit -m 'update index.html' ./
             git push https://${{ secrets.USERNAME_MAIL }}:${{ secrets.T1 }}@${{ secrets.PAGES_ADDR_NO_PROTOCOL }} main
