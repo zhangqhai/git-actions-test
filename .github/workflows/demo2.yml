@@ -3,7 +3,7 @@ name: git-action-test-woekflow-2
 on: 
     push:
         branches:
-            - fix_a
+            - main
         paths: 'index.html'
 
 jobs:
