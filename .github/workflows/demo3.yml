@@ -15,4 +15,6 @@ jobs:
     
       - name: Compile check
         uses: actions/checkout@v3
-      - run: javac Demo.java
+      - run: |
+          echo ${{ github.head_ref }}
+          javac Demo.java
