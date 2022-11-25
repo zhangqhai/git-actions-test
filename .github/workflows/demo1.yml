@@ -82,9 +82,8 @@ jobs:
       
   job-id-05:
     name: job-05
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-    
     - name: Install JDK and print java&maven version
       uses: actions/setup-java@v3
       with: 
