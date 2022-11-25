@@ -16,8 +16,4 @@ jobs:
       - name: Compile check
         uses: actions/checkout@v3
       - run: |
-          echo ${{ github.ref }}
-          echo ${{ github.ref_name }}
-          echo ${{ github.event.pull_request.ref }}
-          echo ${{ github.event.pull_request.ref_name }}
           javac Demo.java
