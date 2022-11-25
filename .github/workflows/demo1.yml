@@ -1,6 +1,9 @@
 
 name: git-action-test-woekflow-1
-on: push
+on: 
+  push: 
+    branches: 
+      - main
 
 jobs:
   job-id-01:
