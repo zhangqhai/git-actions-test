@@ -33,7 +33,7 @@ jobs:
       
     - name: Run java app
       run: |
-        pwd & java Demo.java
+        pwd
         cd cloud-service
         mvn clean package
         ls -l
@@ -79,3 +79,10 @@ jobs:
     steps:
     - name: Print disk info
       run: df -hl
+      
+  job-id-05:
+    name: job-05
+    runs-on: windows-latest
+    steps:
+    - name: Compile check
+      run: javac Demo.java
