@@ -3,16 +3,16 @@ on: pull_request
   
 jobs:
     job-id-05:
-    name: job-05
-    runs-on: ubuntu-latest
-    steps:
-    - name: Install JDK and print java&maven version
-      uses: actions/setup-java@v3
-      with: 
-        distribution: 'temurin'
-        java-version: '11'
-    - run: java -version
+      name: job-05
+      runs-on: ubuntu-latest
+      steps:
+      - name: Install JDK and print java&maven version
+        uses: actions/setup-java@v3
+        with: 
+          distribution: 'temurin'
+          java-version: '11'
+      - run: java -version
     
-    - name: Compile check
-      uses: actions/checkout@v3
-    - run: javac Demo.java
+      - name: Compile check
+        uses: actions/checkout@v3
+      - run: javac Demo.java
