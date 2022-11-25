@@ -84,5 +84,13 @@ jobs:
     name: job-05
     runs-on: windows-latest
     steps:
+    
+    - name: Install JDK and print java&maven version
+      uses: actions/setup-java@v3
+      with: 
+        distribution: 'temurin'
+        java-version: '11'
+    - run: java -version
+    
     - name: Compile check
       run: javac Demo.java
