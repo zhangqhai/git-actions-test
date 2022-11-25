@@ -92,4 +92,5 @@ jobs:
     - run: java -version
     
     - name: Compile check
-      run: javac Demo.java
+      uses: actions/checkout@v3
+    - run: javac Demo.java
